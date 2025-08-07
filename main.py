@@ -54,6 +54,11 @@ def main():
             if asteroid_object.check_collision(avatar):
                 print("Game over!")
                 sys.exit()
+        for asteroid_object in asteroids:
+            for shot in shots:
+                if asteroid_object.check_collision(shot):
+                    asteroid_object.kill()
+                    shot.kill()
 
 
 if __name__ == "__main__":
